@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import {Header} from '../organisms/Header';
 
 
 interface MainLayoutProps {
@@ -7,8 +8,13 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {  
     return (
-        <div className="container mx-auto px-4">
+        <div>
+            <Header/>
+            <main className="container mx-auto px-4">
             {children}
-        </div>
+            </main>
+            
+            
+        </div>  
     )
 }
