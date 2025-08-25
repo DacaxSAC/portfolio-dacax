@@ -1,13 +1,21 @@
-import React from 'react';
-import { NavBarItem } from '../atoms/NavBarItem';
+import React from "react";
+import { NavBarItem } from "../atoms/NavBarItem";
 
+type NavItem = {
+  label: string;
+  href: string;
+};
 
-export const NavBar: React.FC = () => {
-    return (
-        <nav className="flex items-center gap-6 px-6 py-2 bg-[#1292A933] border border-white/10 rounded-full shadow-md shadow-white/25">
-            <NavBarItem label="Inicio" href="#" />
-            <NavBarItem label="Servicios" href="#" />
-            <NavBarItem label="Proyectos" href="#" />
-        </nav>
-    )
-}
+type NavBarProps = {
+  items: NavItem[];
+};
+
+export const NavBar: React.FC<NavBarProps> = ({ items }) => {
+  return (
+    <nav className="flex items-center gap-6 px-6 py-2 bg-[#1292A933] border border-white/10 rounded-full shadow-md shadow-white/25">
+      {items.map((item, index) => (
+        <NavBarItem key={index} label={item.label} href={item.href} />
+      ))}
+    </nav>
+  );
+};

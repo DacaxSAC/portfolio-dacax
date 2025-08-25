@@ -1,4 +1,3 @@
-// components/molecules/Card.tsx
 import { ReactNode } from "react";
 
 interface CardProps {
