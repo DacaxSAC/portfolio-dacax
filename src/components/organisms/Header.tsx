@@ -4,13 +4,14 @@ import { Button } from '../atoms/Button';
 
 export const Header: React.FC = () => {
     const navItems = [
-    { label: "Inicio", href: "#" },
-    { label: "Servicios", href: "#" },
-    { label: "Proyectos", href: "#" },
+    { label: "Inicio", href: "#home" },
+    { label: "Sobre nosotros", href: "#" },
+    { label: "Servicios", href: "#services" },
+    { label: "Proyectos", href: "#projects" },
   ];
 
   return (
-    <header className="w-full">
+    <header className="fixed top-4 left-0 w-full z-50 bg-transparent">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4 relative">
         <Button onClick={() => console.log("Click")}>Dacax</Button>
 

@@ -4,6 +4,8 @@ import { MainLayout } from './components/templates/MainLayout';
 // Components
 import { Button } from './components/atoms/Button'
 import { CardGroup } from './components/organisms/CardGroup'
+import { Slider } from './components/organisms/Slider'
+import { Logo } from './components/atoms/Logo'
 function App() {
 
   const cardData = [
@@ -40,32 +42,38 @@ function App() {
   ]
 
 
-
-
   return (
     <MainLayout>
-      <section>
-        <div>
-          <img src="" alt="Logo Dacax" />
-        </div>
+      <section id = "home" className="w-full min-h-screen bg-[url('/images/Background-Home.png')] bg-cover bg-center bg-no-repeat pt-36">
+        <Logo />
         <h1>Impulsando la Innovación</h1>
         <p>
           Transformamos ideas en realidad con tecnología de vanguardia y un enfoque centrado en el usuario
         </p>
 
-        <Button onClick={() => console.log('Click')}>
-          <p>Descubre nuestros servicios</p>
+        <Button onClick={() => console.log('Click')} >
+          <p>Conoce nuestros servicios</p>
         </Button>
       </section>
 
-      <section className="soluciones">
-        <h2>Nuestras Soluciones</h2>
-        <p>Ofrecemos servicios diseñados para llevar tu negocio al siguiente nivel digital</p>
+      <section id = "services" className="w-full min-h-screen bg-[url('/images/Background-Services.png')] bg-cover bg-center bg-no-repeat pt-36 pb-24">
+        <h2>Nuestros Servicios</h2>
+        <p>Descubre lo que podemos crear juntos</p>
+        <section className="max-w-7xl mx-auto px-6 py-12">
+          <CardGroup cards={cardData} />
+        </section>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <CardGroup cards={cardData} />
+
+
+      <section id = "projects" className="w-full min-h-screen bg-[url('/images/Background-Projects.png')] bg-cover bg-center bg-no-repeat pt-36 pb-24">
+        <h2>Nuestros Proyectos recientes</h2>
+        <p>Conoce lo que hemos creado para nuestros clientes</p>
+        <Slider />
       </section>
+
+
+
     </MainLayout>
   );
 }
