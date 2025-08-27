@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBarItem } from "../atoms/NavBarItem";
+import { NavBarItem } from "../atoms/NavbarItem";
 
 type NavItem = {
   label: string;
