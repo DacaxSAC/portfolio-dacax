@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface CardProps {
-  icon: ReactNode;
+  icon: string;
   title: string;
   description: string;
 }
@@ -9,16 +9,15 @@ interface CardProps {
 export function Card({ icon, title, description }: CardProps) {
   return (
     <div className="flex flex-col items-start justify-center 
-                rounded-2xl border border-cyan-200/40 
+                rounded-2xl px-6 py-[27px] border border-cyan-200/40 
                 bg-black/30 backdrop-blur-md
                 shadow-md shadow-cyan-200/10 
-                p-6 transition hover:shadow-cyan-200/30">
+                transition hover:shadow-cyan-200/30">
 
-      <div className="text-cyan-400 text-3xl mb-4 self-center">{icon}</div>
+      <img src={icon} alt={title} className="w-[32px] h-[32px]"/>
 
-      <h3 className="font-semibold text-white mb-2">{title}</h3>
-      <p className="text-sm text-gray-300 text-left">{description}</p>
+      <h3 className="mt-[30px] font-[Roboto Mono] font-bold text-[20px] text-[#FFFFFF]">{title}</h3>
+      <p className="mt-4 font-[Roboto Mono] font-normal text-[16px] text-[#FFFFFF] text-left">{description}</p>
     </div>
-
   )
 }

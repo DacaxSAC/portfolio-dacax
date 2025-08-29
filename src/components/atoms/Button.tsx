@@ -8,9 +8,10 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({ children, onClick, className }) => {
     return (
-        <button onClick={() => console.log('Click')} className={`px-6 py-2 rounded-full border border-white/10 
-                       bg-[#1292A933] shadow-md shadow-white/25 
-                       text-white text-sm hover:bg-[#1292A955] transition-colors
+        <button onClick={() => console.log('Click')} className={`w-[185px] h-[58px] py-[16px] rounded-full border border-white/10 
+                       shadow-md shadow-white/25 
+                       text-[#FFFFFF] font-['Roboto_Mono'] font-normal text-[20px] leading-[100%] tracking-[0%]
+                       hover:bg-[#1292A955] transition-colors 
                        ${className}`}>
             {children}
         </button>

@@ -1,19 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --color-primary: #646cff;
   --color-secondary: #22c55e;
   --color-muted: #888888;
   --color-background: #242424;
-  --color-foreground: rgba(255, 255, 255, 0.87);
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #FFFFFF;
   background-color: #0000003D;
 
   font-synthesis: none;
@@ -27,7 +21,14 @@
 html {
   scroll-behavior: smooth;
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+/*
 a {
   font-weight: 500;
   color: #646cff;
@@ -37,13 +38,7 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
+
 
 h1 {
   font-size: 3.2em;
@@ -82,34 +77,4 @@ button:focus-visible {
   }
 }
 
-
-/* Design tokens: dark mode overrides (applied when .dark is on html or body) */
-.dark {
-  --color-background: #0a0a0a;
-  --color-foreground: #f5f5f5;
-  --color-primary: #6366f1; /* indigo-500 */
-  --color-secondary: #22c55e; /* emerald-500 */
-  --color-muted: #a3a3a3;
-}
-
-/* Reusable components built with Tailwind via @apply */
-@layer components {
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
-           disabled:pointer-events-none disabled:opacity-50 px-4 py-2;
-  }
-  .btn-primary {
-    @apply btn bg-primary text-white hover:opacity-90;
-  }
-  .btn-secondary {
-    @apply btn bg-secondary text-white hover:opacity-90;
-  }
-}
-
-/* Example utility extension */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+*/

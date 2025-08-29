@@ -44,7 +44,7 @@ export const Slider = () => {
     const [current, setCurrent] = useState(0);
 
     return (
-        <section className="overflow-hidden relative w-full">
+        <section className="overflow-hidden relative pl-[72px]">
             <div
                 className="flex transition-transform duration-500"
                 style={{ transform: `translateX(-${current * 100}%)` }}
@@ -57,14 +57,14 @@ export const Slider = () => {
             </div>
 
             {/* Dots */}
-            <div className="flex justify-center items-center gap-3 mt-6">
+            <div className="flex justify-center items-center gap-[4px] mt-[84px]">
                 {projects.map((_, i) => (
                     <button
                         key={i}
                         onClick={() => setCurrent(i)}
                         className={`p-0 transition-all duration-500 ${i === current
-                                ? "w-14 h-3 bg-white rounded-full"
-                                : "w-2 h-2 bg-gray-500 rounded-full"
+                                ? "w-14 h-3 bg-gray-900/60 rounded-full"
+                                : "w-2 h-2 bg-gray-900/60 rounded-full"
                             }`}
                     />
                 ))}
