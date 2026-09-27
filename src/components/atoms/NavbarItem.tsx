@@ -1,15 +1,24 @@
-import React from 'react';
-
 interface NavBarItemProps {
-    label: string;
-    href: string;
-    className?: string;
+  label: string
+  href: string
+  active?: boolean
+  onNavigate?: () => void
 }
 
-export const NavBarItem: React.FC<NavBarItemProps> = ({ label, href, className }) => {
-    return (
-        <a href={href} className={`text-[#FFFFFF] hover:text-gray-300 transition-colors font-['Roboto_Mono'] font-normal text-[20px] leading-[100%] tracking-[0%] text-center align-middle w-auto ${className}`}>
-            {label}
-        </a>
-    )
+export function NavBarItem({ label, href, active = false, onNavigate }: NavBarItemProps) {
+  return (
+    <a
+      href={href}
+      onClick={onNavigate}
+      aria-current={active ? 'location' : undefined}
+      className={`relative rounded-full px-3.5 py-1.5 text-small transition-colors duration-300 ease-out-quart
+        ${active ? 'text-fg' : 'text-fg-muted hover:text-fg'}`}
+    >
+      <span
+        aria-hidden="true"
+        className={`absolute inset-0 rounded-full bg-surface-strong transition-opacity duration-300 ease-out-quart ${active ? 'opacity-100' : 'opacity-0'}`}
+      />
+      <span className="relative">{label}</span>
+    </a>
+  )
 }

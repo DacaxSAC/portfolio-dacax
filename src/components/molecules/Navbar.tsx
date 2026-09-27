@@ -1,21 +1,27 @@
-import React from "react";
-import { NavBarItem } from "../atoms/NavbarItem";
+import { NavBarItem } from '../atoms/NavbarItem'
 
-type NavItem = {
-  label: string;
-  href: string;
-};
+interface NavItem {
+  label: string
+  href: string
+}
 
-type NavBarProps = {
-  items: NavItem[];
-};
+interface NavBarProps {
+  items: NavItem[]
+  /** id de la sección visible, para marcar el enlace activo. */
+  activeId?: string
+  className?: string
+}
 
-export const NavBar: React.FC<NavBarProps> = ({ items }) => {
+export function NavBar({ items, activeId, className = '' }: NavBarProps) {
   return (
-    <nav className="flex items-center h-[58px] w-auto gap-[44px] px-[32px] py-[16px] border border-white/10 rounded-full shadow-md shadow-white/25">
-      {items.map((item, index) => (
-        <NavBarItem key={index} label={item.label} href={item.href} className=""/>
-      ))}
+    <nav aria-label="Principal" className={className}>
+      <ul className="flex items-center gap-0.5">
+        {items.map((item) => (
+          <li key={item.href}>
+            <NavBarItem label={item.label} href={item.href} active={item.href === `#${activeId}`} />
+          </li>
+        ))}
+      </ul>
     </nav>
-  );
-};
+  )
+}
